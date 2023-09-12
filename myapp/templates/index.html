@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD FORM</title>
+</head>
+<body>
+<style>
+    .content{
+    max-width: 550px;
+    height: 550px;
+    margin: auto;
+    border-radius: 3px;
+    background-color: #e7e6e5;
+    padding: 170px;
+    font-family: Cambria';
+    color: black;
+    font-size:18px;
+    }
+    button[type=submit]:hover {
+    background-color: rgb(53, 51, 51);
+    }
+    button[type=submit] {
+  background-color: #000000;
+  color: white;
+  align: center;
+  padding: 6px 22px;
+  border: none;
+  cursor: pointer;
+  }
+
+</style>
+{% extends 'base.html' %}
+{% block content%}
+<br>
+<form method = "POST" action="add">
+    {% csrf_token %}
+    <div class="content">
+    <label>Category ID: </label>
+    <div>{{form.cat_id}}</div>
+        <br>
+
+    <label>Category Name: </label>
+    <div>{{form.cat_names}}</div><br>
+
+    <div>
+        <button type="submit"> Add </button>
+    </div>
+
+</form>
+{% endblock%}
+
+</body>
+</html>

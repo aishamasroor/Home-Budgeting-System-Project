@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show details</title>
+</head>
+<body>
+<style>
+    .content{
+    max-width: 550px;
+    height: 500px;
+    margin: auto;
+    border-radius: 3px;
+    background-color: #e7e6e5;
+    padding: 155px;
+    font-family: Cambria';
+    color: black;
+    font-size:18px;
+    }
+    button[type=submit]:hover {
+    background-color: rgb(53, 51, 51);
+    }
+    button[type=submit] {
+  background-color: #000000;
+  color: white;
+  align: center;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  }
+
+
+</style>
+{% extends 'base.html' %}
+{% block content%}
+<br xmlns="http://www.w3.org/1999/html">
+<br>
+<form method = "POST" action="show2">
+    {% csrf_token %}
+
+    <div class="content">
+    <label>Category </label>
+    <select name="cat_id">
+        {% for i in cat%}
+        <option value="{{i.cat_id}}"> {{i.cat_names}}</option>
+        {%endfor%}
+    </select>
+    <div>
+<br>
+        <button type="submit" name="name"> Submit  </button>
+    </div>
+    </div>
+
+
+</form>
+{% endblock%}
+</body>
+</html>
